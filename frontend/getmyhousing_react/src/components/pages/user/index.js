@@ -1,0 +1,10 @@
+export { AboutUs } from "./AboutUs";
+export { ContactUs } from "./ContactUs";
+export { NetworkStatusCheck } from "./NoInternetMessage";
+export { NonRefundPolicy } from "./NonRefundPolicy";
+export { PrivacyAndPolicy } from "./PrivacyAndPoicy";
+export { TermsAndConditions } from "./TermsAndConditions";
+export { NotFoundPage } from "./NotFoundPage";
+export { WelcomePage } from "./WelcomePage";
+export { Home } from "./Home";
+export { ServiceCharges } from "./ServiceCharges";

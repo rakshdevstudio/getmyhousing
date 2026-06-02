@@ -1,0 +1,40 @@
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #ff0;
+  opacity: 0;
+  animation: fall 2s linear infinite;
+  z-index: 5;
+}
+.confetti:nth-child(1) {
+  background-color: #ff0;
+  animation-duration: 2s;
+}
+
+.confetti:nth-child(2) {
+  background-color: #f00;
+  animation-duration: 2.5s;
+}
+
+.confetti:nth-child(3) {
+  background-color: #0f0;
+  animation-duration: 3s;
+}
+
+.confetti:nth-child(4) {
+  background-color: #00f;
+  animation-duration: 3.5s;
+}
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}

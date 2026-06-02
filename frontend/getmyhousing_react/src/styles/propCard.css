@@ -1,0 +1,186 @@
+.property-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.property-card:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.property-image-card {
+  position: relative;
+}
+
+.property-image-card img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.property-card-price {
+  position: absolute; /* Equivalent to absolute */
+  top: 1rem; /* Equivalent to top-4 (4 * 0.25rem = 1rem) */
+  right: 1rem; /* Equivalent to right-4 (4 * 0.25rem = 1rem) */
+  background-color: red; /* Equivalent to bg-primary */
+  color: #ffffff; /* Equivalent to text-white */
+  padding: 0.25rem 0.75rem; /* Equivalent to px-3 py-1 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  font-weight: 500; /* Equivalent to font-medium */
+}
+
+.property-card-units {
+  position: absolute; /* Equivalent to absolute */
+  top: 1rem; /* Equivalent to top-4 (4 * 0.25rem = 1rem) */
+  left: 1rem; /* Equivalent to left-4 (4 * 0.25rem = 1rem) */
+  background-color: rgba(0, 0, 0, 0.7); /* Equivalent to bg-black/70 */
+  color: #ffffff; /* Equivalent to text-white */
+  padding: 0.25rem 0.75rem; /* Equivalent to px-3 py-1 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  font-weight: 500; /* Equivalent to font-medium */
+  display: flex; /* Equivalent to flex */
+  align-items: center; /* Equivalent to items-center */
+}
+.property-card-units-icon {
+  height: 1rem; /* Equivalent to h-4 (4 * 0.25rem = 1rem) */
+  width: 1rem; /* Equivalent to w-4 (4 * 0.25rem = 1rem) */
+  margin-right: 0.25rem; /* Equivalent to mr-1 (1 * 0.25rem = 0.25rem) */
+}
+.property-detail-card {
+  padding: 1rem;
+}
+.property-detail-card-title {
+  font-size: 1.125rem; /* Equivalent to text-lg (18px) */
+  font-weight: 600; /* Equivalent to font-semibold */
+  color: #111827; /* Equivalent to text-gray-900 */
+  margin-bottom: 0.5rem; /* Equivalent to mb-2 (2 * 0.25rem = 0.5rem or 8px) */
+}
+.property-detail-card-address {
+  display: flex; /* Equivalent to flex */
+  align-items: center; /* Equivalent to items-center */
+  color: #4b5563; /* Equivalent to text-gray-600 */
+  margin-bottom: 0.75rem; /* Equivalent to mb-3 (3 * 0.25rem = 0.75rem or 12px) */
+}
+.property-detail-card-address-icon {
+  height: 1rem; /* Equivalent to h-4 (4 * 0.25rem = 1rem or 16px) */
+  width: 1rem; /* Equivalent to w-4 (4 * 0.25rem = 1rem or 16px) */
+  margin-right: 0.25rem; /* Equivalent to mr-1 (1 * 0.25rem = 0.25rem or 4px) */
+}
+.property-detail-card-address span {
+  font-size: 0.875rem; /* Equivalent to text-sm (14px) */
+}
+
+.amenities-list {
+  border-top: 1px solid #e5e7eb; /* Equivalent to border-t and border-gray-200 */
+  padding-top: 0.75rem; /* Equivalent to pt-3 (3 * 0.25rem = 0.75rem or 12px) */
+  margin-bottom: 0.75rem; /* Equivalent to mb-3 (3 * 0.25rem = 0.75rem or 12px) */
+}
+.amenities-list h4 {
+  font-size: 0.875rem; /* Equivalent to text-sm (14px) */
+  font-weight: 500; /* Equivalent to font-medium */
+  color: #374151; /* Equivalent to text-gray-700 */
+  margin-bottom: 0.5rem; /* Equivalent to mb-2 (2 * 0.25rem = 0.5rem or 8px) */
+}
+
+.amenities-list > div {
+  display: flex; /* Equivalent to flex */
+  flex-wrap: wrap; /* Equivalent to flex-wrap */
+  gap: 0.5rem; /* Equivalent to gap-2 (2 * 0.25rem = 0.5rem or 8px) */
+}
+
+.amenities-list .amenity {
+  background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+  color: #374151; /* Equivalent to text-gray-700 */
+  font-size: 0.75rem; /* Equivalent to text-xs (12px) */
+  padding: 0.25rem 0.5rem; /* Equivalent to px-2 py-1 (2 * 0.25rem = 0.5rem or 8px, 1 * 0.25rem = 0.25rem or 4px) */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+}
+
+.amenity-count {
+  font-size: 0.75rem; /* Equivalent to text-xs (12px) */
+  color: red;
+}
+.property-card-other-unit {
+  border-top: 1px solid #e5e7eb; /* Equivalent to border-t (top border) and border-gray-200 */
+  padding-top: 0.75rem; /* Equivalent to pt-3 (3 * 0.25rem = 0.75rem or 12px) */
+  margin-bottom: 0.75rem; /* Equivalent to mb-3 (3 * 0.25rem = 0.75rem or 12px) */
+}
+.property-card-other-unit-accordation {
+  display: flex; /* Equivalent to flex */
+  align-items: center; /* Equivalent to items-center */
+  justify-content: space-between; /* Equivalent to justify-between */
+  width: 100%; /* Equivalent to w-full */
+  font-size: 0.875rem; /* Equivalent to text-sm (14px) */
+  font-weight: 500; /* Equivalent to font-medium */
+  color: #ef4444; /* Equivalent to text-primary (Red - Tailwind's primary red) */
+  transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.property-card-other-unit-accordation:hover {
+  color: rgba(239, 68, 68, 0.9); /* Equivalent to hover:text-primary/90 */
+}
+.property-card-up-arrow + .property-card-down-arrow {
+  height: 1rem; /* Equivalent to h-4 (4 * 0.25rem = 1rem or 16px) */
+  width: 1rem; /* Equivalent to w-4 (4 * 0.25rem = 1rem or 16px) */
+}
+.other-unit-container {
+  margin-top: 0.75rem;
+}
+.other-unit-container > * + * {
+  margin-top: 0.5rem; /* Equivalent to space-y-2 (2 * 0.25rem = 0.5rem or 8px) */
+}
+.other-unit-container > .item {
+  background-color: #f9fafb; /* Equivalent to bg-gray-50 */
+  border-radius: 0.5rem; /* Equivalent to rounded-lg (8px) */
+  padding: 0.75rem; /* Equivalent to p-3 (3 * 0.25rem = 0.75rem or 12px) */
+  display: flex; /* Equivalent to flex */
+  justify-content: space-between; /* Equivalent to justify-between */
+  align-items: center; /* Equivalent to items-center */
+}
+
+.other-unit-container > .item:hover {
+  background-color: rgba(246, 153, 153, 0.594);
+}
+
+.unit-area {
+  font-size: 0.875rem; /* Equivalent to text-sm (14px) */
+  color: #4b5563; /* Equivalent to text-gray-600 */
+}
+.property-card-call-btn {
+  display: flex; /* Equivalent to flex */
+  align-items: center; /* Equivalent to items-center */
+  background-color: #dc2626; /* Equivalent to bg-primary (Red) */
+  color: #ffffff; /* Equivalent to text-white */
+  padding: 0.25rem 0.75rem; /* Equivalent to px-3 py-1 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  font-size: 0.875rem; /* Equivalent to text-sm (14px) */
+  font-weight: 500; /* Ensuring text is visible */
+  transition: background-color 0.3s ease-in-out; /* Equivalent to transition-colors */
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.property-card-call-btn:hover {
+  background-color: rgba(
+    220,
+    38,
+    38,
+    0.9
+  ); /* Equivalent to hover:bg-primary/90 */
+}
+.property-card-phone-icon {
+  height: 0.75rem; /* Equivalent to h-3 (12px) */
+  width: 0.75rem; /* Equivalent to w-3 (12px) */
+  margin-right: 0.25rem; /* Equivalent to mr-1 (4px) */
+}

@@ -1,0 +1,30 @@
+.DS_Store
+
+# Frontend generated files
+frontend/getmyhousing_react/node_modules/
+frontend/getmyhousing_react/build/
+
+# Backend generated/local files
+backend/getmyhousing_api/getmyhousing/target/
+backend/getmyhousing_api/getmyhousing/.m2/
+backend/getmyhousing_api/getmyhousing/.settings/
+
+# Embedded git metadata backups / nested repos
+backend/getmyhousing_api/.git
+backend/getmyhousing_api/.git.backup
+frontend/getmyhousing_react/.git
+frontend/getmyhousing_react/.git.backup
+
+# Duplicate extracted copies
+backend/getmyhousing/
+backend/getmyhousing-1/
+backend/src/
+backend/src(1372024)/
+frontend/getmyproperty_react/
+
+# Archive leftovers
+backend/*.zip
+frontend/*.zip
+
+# Duplicate database dump
+database/getmyhousing(11062024).sql

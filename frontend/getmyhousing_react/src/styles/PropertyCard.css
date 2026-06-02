@@ -1,0 +1,158 @@
+/* Property Card */
+.property-card {
+  position: relative;
+  width: 100%;
+  max-width: 24rem;
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+}
+
+.image-container {
+  position: relative;
+  height: 12rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.property-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.property-card:hover .property-image {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.content-container {
+  padding: 1.25rem;
+}
+
+.property-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+}
+
+.location-text {
+  font-size: 0.875rem;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  color: #ea384c;
+}
+
+.price-text {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.amenities-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.amenities-container::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
+}
+
+.amenity-tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.buttons-container .btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.buttons-container .btn-primary {
+  background-color: #ea384c;
+  color: white;
+  border: none;
+}
+
+.buttons-container .btn-primary:hover {
+  background-color: #d62d3f;
+}
+
+.buttons-container .btn-outline {
+  background-color: transparent;
+  border: 1px solid #ea384c;
+  color: #ea384c;
+}
+
+.buttons-container .btn-outline:hover {
+  background-color: #ea384c;
+  color: white;
+}
+
+.buttons-container .icon {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+.icon-container {
+  margin-right: 0.5rem;
+}
+.listing-type {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  z-index: 1;
+}

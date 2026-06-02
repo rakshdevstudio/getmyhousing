@@ -1,0 +1,57 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.carousel-button {
+  width: 60px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  background-color: #ff5252;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.3s;
+  overflow: visible;
+}
+
+.carousel-button:hover {
+  background-color: #e40000;
+}
+
+/* Left Button (Sharp Left) */
+.prev {
+  clip-path: polygon(0 49%, 100% 1%, 100% 100%);
+  margin-right: 10px;
+}
+
+/* Right Button (Sharp Right) */
+.next {
+  clip-path: polygon(100% 49%, 0 0, 0 100%);
+  margin-left: 12px;
+}
+
+/* Arrow Icons Center Alignment */
+.arrow-icon {
+  position: absolute;
+  font-size: 22px; /* Adjust icon size */
+}
+
+/* Adjustments for precise positioning */
+.left-icon {
+  left: 44%;
+}
+
+.right-icon {
+  right: 44%;
+}

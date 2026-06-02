@@ -1,0 +1,26 @@
+.blog-content {
+  padding: 30px 0px;
+}
+
+.blog-content h2 {
+  margin: 15px 0px;
+  font-weight: 600;
+}
+
+.blog-content h3 {
+  margin: 10px 0px;
+  font-weight: 500;
+}
+
+.blog-content p {
+  margin-bottom: 7px;
+  text-align: justify;
+}
+
+.blog-content ul {
+  margin-left: 25px;
+}
+
+.blog-content ul li {
+  margin-bottom: 5px;
+}

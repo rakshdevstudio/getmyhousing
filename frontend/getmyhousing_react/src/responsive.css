@@ -1,0 +1,101 @@
+/* Below 600px */
+@media (max-width: 600px) {
+  .primary-heading-container {
+    margin-bottom: 40px;
+  }
+
+  .primary-heading-container .section-primary-heading {
+    font-size: 28px;
+  }
+  .property-image-container img {
+    max-height: 150px;
+    min-height: 150px;
+    object-fit: contain;
+  }
+
+  .property-title-container a {
+    font-size: 13px;
+  }
+  .autocomplete-input {
+    font-size: 13px;
+  }
+  .property-price-container .property-price {
+    font-size: 14px;
+  }
+
+  .autocomplete-link {
+    font-size: 12px;
+  }
+}
+
+/* Between 600px and 900px */
+@media (min-width: 601px) and (max-width: 900px) {
+  .primary-heading-container {
+    margin-bottom: 40px;
+  }
+
+  .primary-heading-container .section-primary-heading {
+    font-size: 25px;
+  }
+  .property-image-container img {
+    max-height: 150px;
+    min-height: 150px;
+    object-fit: contain;
+  }
+}
+
+/* Between 900px and 1200px */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .primary-heading-container {
+    margin-bottom: 40px;
+  }
+
+  .primary-heading-container .section-primary-heading {
+    font-size: 30px;
+  }
+  .property-image-container img {
+    max-height: 160px;
+    min-height: 160px;
+    object-fit: contain;
+  }
+}
+
+/* Between 1200px and 1536px */
+@media (min-width: 1201px) and (max-width: 1536px) {
+  .primary-heading-container {
+    margin-bottom: 40px;
+  }
+
+  .primary-heading-container .section-primary-heading {
+    font-size: 36px;
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .property-image-container img {
+    max-height: 160px;
+    min-height: 160px;
+    object-fit: contain;
+  }
+}
+
+/* Above 1536px */
+@media (min-width: 1537px) {
+  .primary-heading-container {
+    margin-bottom: 40px;
+  }
+
+  .primary-heading-container .section-primary-heading {
+    font-size: 30px;
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .property-image-container img {
+    max-height: 160px;
+    min-height: 160px;
+    object-fit: contain;
+  }
+}

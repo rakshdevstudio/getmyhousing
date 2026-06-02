@@ -1,0 +1,131 @@
+.mydict div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -3px;
+  justify-content: center;
+}
+
+.mydict1 {
+  margin-right: 2rem;
+  margin-bottom: 13px;
+}
+
+.mydict1 input[type="radio"],
+.mydict1 input[type="checkbox"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.mydict11 input[type="radio"],
+.mydict11 input[type="checkbox"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.mydict1 input[type="radio"]:checked + span,
+.mydict1 input[type="checkbox"]:checked + span {
+  box-shadow: 0 0 0 0.0625em #191919;
+  background-color: #443d3d;
+  z-index: 1;
+  color: #ffffff;
+}
+.mydict11 input[type="radio"]:checked + span,
+.mydict11 input[type="checkbox"]:checked + span {
+  box-shadow: 0 0 0 0.0625em rgb(230, 34, 77);
+  background-color: rgb(230, 34, 77);
+  z-index: 1;
+  color: #ffffff;
+}
+
+.mydict1 input[type="radio"]:checked + dev {
+  border-radius: 20px;
+  border: 0.5px solid var(--BG-Color-5, #db282f);
+  background: #ffe3e3;
+}
+.mydict11 input[type="radio"]:checked + dev {
+  border-radius: 20px;
+  border: 0.5px solid var(--BG-Color-5, #db282f);
+  background: #ffe3e3;
+}
+
+label span,
+label dev {
+  display: block;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0.375em 0.75em;
+  position: relative;
+  margin-left: 0.0625em;
+  box-shadow: 0 0 0 0.0625em #141415;
+  letter-spacing: 0.05em;
+  color: #141414;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+.border1 {
+  border-radius: 20px 20px 20px 20px;
+  text-transform: capitalize;
+  max-height: 33px;
+}
+.border2 {
+  border-radius: 20px 20px 20px 20px;
+  text-transform: capitalize;
+}
+.border2 {
+  border-radius: 20px 20px 20px 20px;
+  text-transform: capitalize;
+  max-height: 10px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(224, 222, 222, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mydictt label span {
+  display: block;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0.375em 0.75em;
+  position: relative;
+  margin-left: 0.0625em;
+  box-shadow: 0 0 0 0.0625em #141415;
+  letter-spacing: 0.05em;
+  color: #141414;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+.mydictt label dev {
+  display: block;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0.375em 0.75em;
+  position: relative;
+  margin-left: 0.0625em;
+  box-shadow: 0 0 0 0.0625em #141415;
+  letter-spacing: 0.05em;
+  color: #141414;
+  text-align: center;
+  transition: background-color 0.5s ease;
+  padding-top: 0.001em;
+}

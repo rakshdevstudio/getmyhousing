@@ -1,0 +1,144 @@
+.sub-services-section {
+  padding: 60px 0;
+  background-color: #ffecec63;
+}
+
+.sub-services-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.service-card {
+  border-radius: 15px;
+  border: 1px solid #e5e5e5;
+  transition: all 0.5s ease-in-out;
+}
+
+.service-card:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: scale(1.05);
+}
+
+.service-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+.service-points li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.primary-heading-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-primary-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.heading-underline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.line {
+  width: 50px;
+  height: 3px;
+  background-color: #ff5252;
+}
+
+.home-icon {
+  font-size: 1.8rem;
+  color: #ff5252;
+  margin: 0 10px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+/* why choose us */
+
+section.why-choose-us {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(
+    to right,
+    #f9f9f9,
+    #ffffff
+  ); /* Subtle gradient background */
+}
+
+.why-choose-us h2 {
+  font-size: 32px;
+  color: #222;
+  font-weight: bold;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.why-choose-us h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #ff5252;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.features-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.feature-card {
+  background: #ffffff;
+  border: 2px solid #ff5252;
+  border-radius: 12px;
+  padding: 20px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  background: #ff5252;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+  color: #ff5252;
+}
+
+.feature-card:hover .feature-icon {
+  color: white;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .hero-form-container {
+    justify-content: center; /* Center alignment for mobile screens */
+  }
+}
