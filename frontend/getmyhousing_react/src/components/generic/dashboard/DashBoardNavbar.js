@@ -13,11 +13,6 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getLocation } from "../../../global/redux/action";
-import { useCookies } from "react-cookie";
-import { useEffect } from "react";
-import { config } from "../../../config/config";
 import { useMenuItems } from "./NavPermissionUtils";
 
 const openedMixin = (theme) => ({
@@ -82,6 +77,10 @@ const DashBoardNavbar = () => {
   };
 
   const handleTabChange = (path) => {
+    if (!path) {
+      navigate("/");
+      return;
+    }
     navigate(path);
   };
 
@@ -117,7 +116,7 @@ const DashBoardNavbar = () => {
                   justifyContent: open ? "initial" : "center",
                   px: 2.5,
                 }}
-                onClick={() => handleTabChange(item.path)}
+                onClick={() => handleTabChange(item?.path)}
               >
                 <ListItemIcon
                   sx={{

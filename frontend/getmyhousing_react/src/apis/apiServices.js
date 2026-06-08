@@ -2,6 +2,16 @@ import axios from "axios";
 import { config } from "../config/config";
 const packageJson = require("../../package.json");
 
+const buildNetworkErrorResponse = (error) => ({
+  status: 503,
+  data: {
+    responseCode: "NETWORK_ERROR",
+    responseMessage:
+      error?.message ||
+      "Unable to connect to the server. Please make sure the backend is running.",
+  },
+});
+
 export const invokeApi = async (url, params, cookies) => {
   try {
     let headers = {
@@ -27,7 +37,7 @@ export const invokeApi = async (url, params, cookies) => {
     }
     return await axios.post(url, params, { headers: headers });
   } catch (error) {
-    return error?.response ?? null;
+    return error?.response ?? buildNetworkErrorResponse(error);
   }
 };
 
@@ -56,7 +66,7 @@ export const invokeFormDataApi = async (url, formData, cookies) => {
     }
     return await axios.post(url, formData, { headers: headers });
   } catch (error) {
-    return error?.response ?? null;
+    return error?.response ?? buildNetworkErrorResponse(error);
   }
 };
 

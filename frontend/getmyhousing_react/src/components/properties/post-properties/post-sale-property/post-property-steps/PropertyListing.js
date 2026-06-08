@@ -27,6 +27,7 @@ export default function PropertyListing({
   const [buildingType, setBuildingType] = useState(formData.buildingType);
   const [propertiesType, setPropertiesType] = useState(formData.propertiesType);
   const [loading, setLoading] = useState(false);
+  const [propertyTypeError, setPropertyTypeError] = useState("");
   const [cookies] = useCookies();
 
   const data1 = { propertyListingType, buildingType, propertiesType };
@@ -72,12 +73,19 @@ export default function PropertyListing({
           cookies
         );
 
-        if (response.data.PropertyTypes) {
-          setGetPropertyType(response.data.PropertyTypes);
+        if (response?.status >= 200 && response?.status < 300) {
+          setGetPropertyType(response?.data?.PropertyTypes || []);
+          setPropertyTypeError("");
         } else {
-          console.error("No data in the response");
+          setGetPropertyType([]);
+          setPropertyTypeError(
+            response?.data?.responseMessage ||
+              "Property types could not be loaded right now."
+          );
         }
       } catch (error) {
+        setGetPropertyType([]);
+        setPropertyTypeError("Property types could not be loaded right now.");
         console.error("An error occurred while fetching data:", error);
       }
     };
@@ -141,6 +149,11 @@ export default function PropertyListing({
             <Typography sx={{ mb: 1 }}>
               <b>Building Type</b>
             </Typography>
+            {!!propertyTypeError && (
+              <Typography sx={{ mb: 1, color: "error.main" }}>
+                {propertyTypeError}
+              </Typography>
+            )}
             <Box
               className="mydict"
               sx={{

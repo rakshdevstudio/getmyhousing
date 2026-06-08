@@ -375,7 +375,7 @@ const Header = () => {
                           vertical: "bottom",
                         }}
                       >
-                        {userData?.user?.roles.includes("Customer") ? (
+                        {userData?.user?.roles?.includes("Customer") ? (
                           <MenuItem
                             onClick={() => {
                               navigate("/my-profile");
@@ -390,7 +390,9 @@ const Header = () => {
                         ) : (
                           <MenuItem
                             onClick={() => {
-                              navigate(menuItems[0].path);
+                              const dashboardPath =
+                                menuItems?.find((item) => item?.path)?.path || "/";
+                              navigate(dashboardPath);
                               handleCloseProfileMenu();
                             }}
                           >

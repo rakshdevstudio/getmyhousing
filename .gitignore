@@ -8,6 +8,9 @@ frontend/getmyhousing_react/build/
 backend/getmyhousing_api/getmyhousing/target/
 backend/getmyhousing_api/getmyhousing/.m2/
 backend/getmyhousing_api/getmyhousing/.settings/
+backend/getmyhousing_api/getmyhousing/data/
+backend/getmyhousing_api/getmyhousing/log.txt
+backend/getmyhousing_api/getmyhousing/pid.file
 
 # Embedded git metadata backups / nested repos
 backend/getmyhousing_api/.git

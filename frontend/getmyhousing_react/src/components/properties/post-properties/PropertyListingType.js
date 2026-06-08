@@ -36,6 +36,7 @@ export default function PropertyListingType() {
   // below the state for store the rent and buy
   const [nextStep, setNextStep] = useState("");
   const [nextStepHandler, setNextStepHandler] = useState(true);
+  const [propertyTypeError, setPropertyTypeError] = useState("");
 
   const desiredOrder = ["residential", "commercial", "industrial"];
   // below the state is for all data object for sale or buy
@@ -126,20 +127,31 @@ export default function PropertyListingType() {
           params,
           cookies
         );
-        if (response.data.PropertyTypes) {
-          setGetPropertyType(response.data.PropertyTypes);
-        } else if (response.status === 401) {
+
+        if (response?.status === 401) {
           navigate("/logout");
+          return;
+        }
+
+        if (response?.status >= 200 && response?.status < 300) {
+          setGetPropertyType(response?.data?.PropertyTypes || []);
+          setPropertyTypeError("");
         } else {
-          console.error("No data in the response");
+          setGetPropertyType([]);
+          setPropertyTypeError(
+            response?.data?.responseMessage ||
+              "Property types could not be loaded right now."
+          );
         }
       } catch (error) {
+        setGetPropertyType([]);
+        setPropertyTypeError("Property types could not be loaded right now.");
         console.error("An error occurred while fetching data:", error);
       }
     };
 
     getProperty();
-  }, [cookies]);
+  }, [cookies, navigate]);
 
   useEffect(() => {
     if (propertyListingType && buildingType && propertiesType) {
@@ -207,6 +219,11 @@ export default function PropertyListingType() {
                 <Typography sx={{ mb: 1, fontWeight: "bold" }}>
                   Building Type <span style={{ color: "red" }}>*</span>
                 </Typography>
+                {!!propertyTypeError && (
+                  <Typography sx={{ mb: 1, color: "error.main" }}>
+                    {propertyTypeError}
+                  </Typography>
+                )}
                 <Box
                   className="mydict"
                   sx={{

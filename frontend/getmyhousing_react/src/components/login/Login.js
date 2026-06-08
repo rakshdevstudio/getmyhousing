@@ -9,7 +9,7 @@ import {
   Grid,
   useTheme,
 } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { useCookies } from "react-cookie";
 import { useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
@@ -17,8 +17,6 @@ import { config } from "../../config/config";
 import { apiList, invokeApi } from "../../apis/apiServices";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { useDispatch, useSelector } from "react-redux";
-import { getLocation, getUser } from "../../global/redux/action";
 import { Bounce, toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import "./App.css";
@@ -27,7 +25,6 @@ const Login = () => {
   const navigate = useNavigate();
   const [cookies, setCookies] = useCookies([config.cookieName]);
   const theme = useTheme();
-  const dispatch = useDispatch();
   const [loading, setloading] = useState(false);
 
   const [mail, setMail] = useState("");
@@ -37,56 +34,6 @@ const Login = () => {
   const [passwordHelperText, setPasswordHelperText] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
-
-  const { userData, userError, isFetching } = useSelector(
-    (state) => state.user
-  );
-  const { locationData, locationError, isLocationFetching } = useSelector(
-    (state) => state.location
-  );
-
-  useEffect(() => {
-    if (userError) {
-      alert(
-        "Something went wrong while fetching user details. Please try again later!"
-      );
-    }
-    if (locationError) {
-      alert(
-        "Something went wrong while fetching Location details. Please try again later!"
-      );
-    }
-  }, [userError, locationError]);
-
-  useEffect(() => {
-    // Check if the necessary conditions are met before dispatching
-    if (
-      cookies[config.cookieName]?.loginUserId &&
-      !userData &&
-      !isFetching &&
-      !userError
-    ) {
-      dispatch(
-        getUser({ id: cookies[config.cookieName]?.loginUserId, cookies })
-      );
-    }
-    if (!locationData?.countries && !isLocationFetching && !locationError) {
-      dispatch(
-        getLocation({ id: cookies[config.cookieName]?.loginUserId, cookies })
-      );
-    }
-  }, [
-    dispatch,
-    cookies,
-    userData,
-    isFetching,
-    userError,
-    locationError,
-    locationData,
-    isLocationFetching,
-  ]);
-
-
 
   const handleLogin = async (e) => {
     e.preventDefault();
