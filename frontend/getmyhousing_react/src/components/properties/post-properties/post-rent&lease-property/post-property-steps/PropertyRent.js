@@ -26,10 +26,12 @@ const PropertyRent = ({ next, back, formData, updateFormData, detailsId }) => {
 
   function validateField() {
     let validate = true;
-    if (!validateAmount) {
-      setRentAmountError(true);
-      setRentAmountHelperText("Please Enter Valid Amount");
-      validate = false;
+    if (formData.propertiesType !== "PG/Co-living") {
+      if (!validateAmount) {
+        setRentAmountError(true);
+        setRentAmountHelperText("Please Enter Valid Amount");
+        validate = false;
+      }
     }
     if (validate) {
       next();

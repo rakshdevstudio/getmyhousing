@@ -625,10 +625,7 @@ function AddRentAndLeaseProperty({
                     item.isvisible &&
                     formData.propertiesType !== "PG/Co-living"
                   ) {
-                    return (
-                      <>
-                        <Box
-                          key={item.label}
+                    return ( <Box key={item.label}
                           className="mydict"
                           sx={{
                             boxSizing: "initial",
@@ -675,10 +672,7 @@ function AddRentAndLeaseProperty({
                               {item.label}
                             </span>
                           </label>
-                        </Box>
-                      </>
-                    );
-                  } else if (
+                        </Box> ); } else if (
                     item.isvisible &&
                     formData.propertiesType === "PG/Co-living"
                   ) {

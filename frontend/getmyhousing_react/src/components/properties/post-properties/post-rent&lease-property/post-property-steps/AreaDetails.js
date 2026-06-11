@@ -356,7 +356,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                         if (item === 1) {
                           return (
                             //Super Built up Area
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={4} xs={10}>
                                 <TextField
                                   label="Super Built up Area"
@@ -386,7 +386,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -397,7 +397,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -449,7 +449,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                       {showAreas?.map((item, index) => {
                         if (item === 2) {
                           return (
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={3.5} xs={12}>
                                 <TextField
                                   label="Built up Area"
@@ -477,7 +477,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -488,7 +488,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -563,7 +563,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                         if (item === 2) {
                           return (
                             //Built up Area
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={4} xs={10}>
                                 <TextField
                                   label="Built up Area "
@@ -593,7 +593,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -604,7 +604,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -718,7 +718,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -729,7 +729,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -843,7 +843,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -854,7 +854,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -1008,7 +1008,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                     }}
                                     disableClearable
                                     options={units}
-                                    getOptionSelected={(option, value) =>
+                                    isOptionEqualToValue={(option, value) =>
                                       option === value
                                     }
                                     renderInput={(params) => (
@@ -1019,7 +1019,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -1126,7 +1126,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                     }}
                                     disableClearable
                                     options={units}
-                                    getOptionSelected={(option, value) =>
+                                    isOptionEqualToValue={(option, value) =>
                                       option === value
                                     }
                                     renderInput={(params) => (
@@ -1137,7 +1137,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -1244,7 +1244,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                     }}
                                     disableClearable
                                     options={units}
-                                    getOptionSelected={(option, value) =>
+                                    isOptionEqualToValue={(option, value) =>
                                       option === value
                                     }
                                     renderInput={(params) => (
@@ -1255,7 +1255,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -1379,7 +1379,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                         if (item === 1) {
                           return (
                             //Plot Area
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={4} xs={10}>
                                 <TextField
                                   label="Plot Area"
@@ -1409,7 +1409,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -1420,7 +1420,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -1472,7 +1472,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                       {showAreas?.map((item, index) => {
                         if (item === 2) {
                           return (
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={3.5} xs={12}>
                                 <TextField
                                   label="Super Built up Area "
@@ -1498,7 +1498,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -1509,7 +1509,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -1584,7 +1584,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                         if (item === 2) {
                           return (
                             //Super Built up Area
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={4} xs={10}>
                                 <TextField
                                   label="Super Built up Area"
@@ -1614,7 +1614,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -1625,7 +1625,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -1739,7 +1739,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -1750,7 +1750,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -1864,7 +1864,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -1875,7 +1875,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -1989,7 +1989,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -2000,7 +2000,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -2191,7 +2191,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -2270,7 +2270,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -2378,7 +2378,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -2486,7 +2486,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -2594,7 +2594,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -2702,7 +2702,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -2810,7 +2810,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -2918,7 +2918,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -3026,7 +3026,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -3134,7 +3134,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -3242,7 +3242,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                         }}
                                       >
                                         <Box
-                                          item
+                                          
                                           sx={{
                                             color: "black",
                                             fontFamily: "Inter",
@@ -3607,7 +3607,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                           setnumberOfBedRooms(newValue);
                         }}
                         options={rooms}
-                        getOptionSelected={(option, value) => option === value}
+                        isOptionEqualToValue={(option, value) => option === value}
                         renderInput={(params) => (
                           <TextField
                             {...params}
@@ -3686,7 +3686,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                           setnumberOfBathRooms(newValue);
                         }}
                         options={rooms}
-                        getOptionSelected={(option, value) => option === value}
+                        isOptionEqualToValue={(option, value) => option === value}
                         renderInput={(params) => (
                           <TextField
                             {...params}
@@ -3765,7 +3765,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                         }}
                         options={rooms}
                         getOptionLabel={(option) => option}
-                        getOptionSelected={(option, value) => option === value}
+                        isOptionEqualToValue={(option, value) => option === value}
                         renderInput={(params) => (
                           <TextField
                             {...params}
@@ -4401,7 +4401,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -4412,7 +4412,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -4462,7 +4462,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                       {showAreas?.map((item, index) => {
                         if (item === 2) {
                           return (
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={3.5} xs={12}>
                                 <TextField
                                   label="Built up Area"
@@ -4488,7 +4488,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -4499,7 +4499,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -4597,7 +4597,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -4608,7 +4608,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -4706,7 +4706,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -4717,7 +4717,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -4855,7 +4855,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                         if (item === 1) {
                           return (
                             //Plot Area
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={4} xs={10}>
                                 <TextField
                                   label="Plot Area"
@@ -4885,7 +4885,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                           }}
                                           disableClearable
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -4896,7 +4896,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -4981,7 +4981,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                       {showAreas?.map((item, index) => {
                         if (item === 2) {
                           return (
-                            <Grid container>
+                            <Grid container key={index}>
                               <Grid item md={3.5} xs={12}>
                                 <TextField
                                   label="Super Built up Area "
@@ -5007,7 +5007,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -5018,7 +5018,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -5113,7 +5113,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -5124,7 +5124,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -5219,7 +5219,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -5230,7 +5230,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -5325,7 +5325,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                             setAreaUnit(newValue);
                                           }}
                                           options={units}
-                                          getOptionSelected={(option, value) =>
+                                          isOptionEqualToValue={(option, value) =>
                                             option === value
                                           }
                                           renderInput={(params) => (
@@ -5336,7 +5336,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                                               }}
                                             >
                                               <Box
-                                                item
+                                                
                                                 sx={{
                                                   color: "black",
                                                   fontFamily: "Inter",
@@ -5406,7 +5406,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                         }
                         return null;
                       })}
-                      <Grid container md={3} sx={{ display: "flex", mb: 3, ml: 1 }}>
+                      <Grid container item md={3} sx={{ display: "flex", mb: 3, ml: 1 }}>
                         <Grid item mt={3}>
                           <Box
                             sx={{
@@ -6556,7 +6556,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                             style={{ display: "flex", alignItems: "center" }}
                           >
                             <Box
-                              item
+                              
                               sx={{
                                 color: "black",
                                 fontFamily: "Inter",
@@ -6636,7 +6636,7 @@ const AreaDetails = ({ next, back, formData, updateFormData, detailsId }) => {
                             style={{ display: "flex", alignItems: "center" }}
                           >
                             <Box
-                              item
+                              
                               sx={{
                                 color: "black",
                                 fontFamily: "Inter",
