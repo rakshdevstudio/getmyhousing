@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Box from "@mui/material/Box";
 import { Button, Typography } from "@mui/material";
 import { useCookies } from "react-cookie";
@@ -36,12 +36,61 @@ function AddSaleProperty({
 
   const [formData, setFormData] = useState(allStepsData);
 
-  const [activeStep, setActiveStep] = useState(2);
+  const [activeStep, _setActiveStep] = useState(2);
 
   // below the loading state is for loading when the data is transfering
   const [loading, setLoading] = useState(false);
   // below the state is stored the all steps and that value
   const [steps, setSteps] = useState(saleUpdatedSteps);
+
+  const [maxStepVisited, setMaxStepVisited] = useState(2);
+
+  const pendingTargetStepRef = useRef(null);
+
+  const setActiveStep = useCallback((val) => {
+    if (pendingTargetStepRef.current !== null) {
+      const target = pendingTargetStepRef.current;
+      pendingTargetStepRef.current = null;
+      _setActiveStep(target);
+    } else {
+      _setActiveStep(val);
+    }
+  }, []);
+
+  useEffect(() => {
+    setMaxStepVisited((prev) => Math.max(prev, activeStep));
+  }, [activeStep]);
+
+  const handleTabClick = (targetStep) => {
+    if (targetStep === activeStep) return;
+
+    if (targetStep < activeStep) {
+      _setActiveStep(targetStep);
+      return;
+    }
+
+    const nextVisibleStep = steps.find(
+      (step) => step.value > activeStep && step.isvisible
+    )?.value;
+
+    if (targetStep <= maxStepVisited || targetStep === nextVisibleStep) {
+      const container = document.getElementById("active-step-container");
+      if (container) {
+        const buttons = Array.from(container.getElementsByTagName("button"));
+        const nextButton = buttons.find((btn) => {
+          const text = (btn.textContent || btn.innerText || "").trim().toLowerCase();
+          return text === "next" || text === "update";
+        });
+        if (nextButton) {
+          pendingTargetStepRef.current = targetStep;
+          nextButton.click();
+          setTimeout(() => {
+            pendingTargetStepRef.current = null;
+          }, 100);
+        }
+      }
+    }
+  };
   // after solve the buy package api below state should give false and verifyPackage() this function should enable
   const [packageCheck, setpackageCheck] = useState(true);
 
@@ -699,13 +748,12 @@ function AddSaleProperty({
                         className={`mydict1 border1 ${
                           activeStep === item.value ? "active-step" : ""
                         }`}
-                        // onClick={() => {
-                        //   setActiveStep(item.value);
-                        // }}
+                        onClick={() => handleTabClick(item.value)}
                         style={{
                           marginRight: "5px",
                           marginBottom: "5px",
                           boxShadow: "none",
+                          cursor: "pointer",
                         }}
                       >
                         <input
@@ -810,7 +858,7 @@ function AddSaleProperty({
               )}
             </Box>
           ) : (
-            <Box sx={{ ml: { md: 3, xs: 0 }, mt: 2 }}>
+            <Box id="active-step-container" sx={{ ml: { md: 3, xs: 0 }, mt: 2 }}>
               {/* {activeStep === 1 && (
                 <SubPropertyType
                   next={() =>

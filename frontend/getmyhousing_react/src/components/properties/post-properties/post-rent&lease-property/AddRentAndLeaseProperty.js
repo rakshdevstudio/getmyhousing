@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Box from "@mui/material/Box";
 import { Button, Typography } from "@mui/material";
 import LocationDetails from "./post-property-steps/LocationDetails";
@@ -46,11 +46,67 @@ function AddRentAndLeaseProperty({
     { label: "Brokerage Details", value: 12, isvisible: true },
   ];
   const [stepValue, setstepValue] = useState("");
-  const [activeStep, setActiveStep] = useState(
+  const [activeStep, _setActiveStep] = useState(
     updatedSteps.value ? updatedSteps.value : 1
   );
   const [loading, setLoading] = useState(false);
   const [steps, setSteps] = useState(updatedSteps);
+
+  const [maxStepVisited, setMaxStepVisited] = useState(
+    updatedSteps.value ? updatedSteps.value : 1
+  );
+
+  const pendingTargetStepRef = useRef(null);
+
+  const setActiveStep = useCallback((val) => {
+    if (pendingTargetStepRef.current !== null) {
+      const target = pendingTargetStepRef.current;
+      pendingTargetStepRef.current = null;
+      _setActiveStep(target);
+    } else {
+      _setActiveStep(val);
+    }
+  }, []);
+
+  useEffect(() => {
+    setMaxStepVisited((prev) => Math.max(prev, activeStep));
+  }, [activeStep]);
+
+  const handleTabClick = (targetStep) => {
+    if (targetStep === activeStep) return;
+
+    if (targetStep < activeStep) {
+      _setActiveStep(targetStep);
+      return;
+    }
+
+    if (activeStep === 1 && !formData.verifyPackageByLocation) {
+      alert("Please enter the location details and click on NEXT to verify your Package..!!");
+      return;
+    }
+
+    const nextVisibleStep = steps.find(
+      (step) => step.value > activeStep && step.isvisible
+    )?.value;
+
+    if (targetStep <= maxStepVisited || targetStep === nextVisibleStep) {
+      const container = document.getElementById("active-step-container");
+      if (container) {
+        const buttons = Array.from(container.getElementsByTagName("button"));
+        const nextButton = buttons.find((btn) => {
+          const text = (btn.textContent || btn.innerText || "").trim().toLowerCase();
+          return text === "next" || text === "update";
+        });
+        if (nextButton) {
+          pendingTargetStepRef.current = targetStep;
+          nextButton.click();
+          setTimeout(() => {
+            pendingTargetStepRef.current = null;
+          }, 100);
+        }
+      }
+    }
+  };
   const [packageCheck, setpackageCheck] = useState(true);
 
   const [formData, setFormData] = useState(allStepsData);
@@ -635,22 +691,12 @@ function AddRentAndLeaseProperty({
                           <label
                             className={`mydict1 border1 ${activeStep === item.value ? "active-step" : ""
                               }`}
-                            // onClick={() => {
-                            //   if (
-                            //     activeStep === 1 &&
-                            //     !formData.verifyPackageByLocation
-                            //   ) {
-                            //     alert(
-                            //       "Please enter the location details and click on NEXT to verify your Package..!!"
-                            //     );
-                            //   } else {
-                            //     setActiveStep(item.value);
-                            //   }
-                            // }}
+                            onClick={() => handleTabClick(item.value)}
                             style={{
                               marginRight: "5px",
                               marginBottom: "5px",
                               boxShadow: "none",
+                              cursor: "pointer",
                             }}
                           >
                             <input
@@ -689,21 +735,13 @@ function AddRentAndLeaseProperty({
                         <label
                           className={`mydict1 border1 ${activeStep === item.value ? "active-step" : ""
                             }`}
-                          // onClick={() => {
-                          //   if (
-                          //     activeStep === 1 &&
-                          //     !formData.verifyPackageByLocation
-                          //   )
-                          //     alert(
-                          //       "Please enter the location details and click on NEXT to verify your Package..!!"
-                          //     );
-                          //   else setActiveStep(item.value);
-                          // }}
+                          onClick={() => handleTabClick(item.value)}
                           style={{
                             marginRight: "5px",
                             marginBottom: "5px",
                             boxShadow: "none",
                             userSelect: "none",
+                            cursor: "pointer",
                           }}
                         >
                           <input
@@ -822,7 +860,7 @@ function AddRentAndLeaseProperty({
               </React.Fragment>
             ) : (
               <>
-                <Box sx={{ ml: 3, mt: 2 }}>
+                <Box id="active-step-container" sx={{ ml: 3, mt: 2 }}>
                   {/* {activeStep === 0 && (
                         <PropertyListing
                           next={() =>
